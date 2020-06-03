@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Certificate</title>
+    <style>
+        @page {
+            margin: 0px;
+        }
+
+        @font-face {
+            font-family: 'CiscoSansTT';
+            src: url("classpath:certificate-template/CiscoSans/CiscoSansTTRegular.woff");
+        }
+
+        @font-face {
+            font-family: 'CiscoSansTTLight';
+            src: url("classpath:certificate-template/CiscoSans/CiscoSansTTLight.woff");
+        }
+
+        @font-face {
+            font-family: 'CiscoSansTTBold';
+            src: url("classpath:certificate-template/CiscoSans/CiscoSansTTBold.woff");
+        }
+
+        @font-face {
+            font-family: 'CiscoSansTTThin';
+            src: url("classpath:certificate-template/CiscoSans/CiscoSansTTThin.woff");
+        }
+
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        body {
+            width: 842px;
+            height: 595px;
+            line-height: 1;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        blockquote, q {
+            quotes: none;
+        }
+
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+        }
+
+        .header {
+            width: 100%;
+            height: 220px;
+            position: fixed;
+            top: 0;
+            background-color: #005073;
+        }
+
+        .footer {
+            width: 100%;
+            height: 90px;
+            background-color: #005073;
+            position: fixed;
+            bottom: 0;
+            float: left;
+        }
+
+        .cert {
+            width: 100%;
+            height: 480px;
+            position: fixed;
+        }
+
+        .cert-col {
+            background: white;
+            text-align: center;
+            font-family: CiscoSansTT;
+            font-size: 18px;
+        }
+
+        .bold {
+            font-family: CiscoSansTTBold;
+        }
+
+        .heart-logo {
+            float: right;
+            margin-top: 30px;
+            margin-right: 70px;
+        }
+
+        .margin-top-25px {
+            margin-top: 25px;
+        }
+
+        .margin-btm-20px {
+            margin-bottom: 20px;
+        }
+
+        .margin-btm-5px {
+            margin-bottom: 5px;
+        }
+
+        .margin-top-15px {
+            margin-top: 15px;
+        }
+
+        .reason {
+            font-family: CiscoSansTTLight;
+            font-size: 18px;
+            background-color: #BDD7EE;
+            border-radius: 20px;
+            border: 2px solid #00B0F0;
+            width: auto;
+            height: 389px;
+            margin: 25px;
+            padding: 30px 10px 10px 10px;
+            text-align: left;
+        }
+
+        sup {
+            font-size:xx-small;
+            vertical-align:super;
+        }
+
+    </style>
+</head>
+<body>
+
+<!--    Main container section    -->
+<div class="container">
+
+    <!--    Header section    -->
+    <div class="header">
+        <div style="float: left; width: 60%; padding-top: 70px">
+            <span style="font-family: CiscoSansTTLight; color: white; font-size: 80px; padding-left: 70px;">Living</span>
+            <span style="font-family: CiscoSansTTThin; color: #00BCEB; font-size: 80px; font-family: CiscoSansTTThin">Cisco</span>
+            <br/>
+            <span style="color: white; padding-top: 5px; padding-left: 70px; font-weight: 200; font-size: 20px; font-family: CiscoSansTTThin; font-size: 23px">
+                    Where appreciation is a habit
+                </span>
+        </div>
+        <div style="float: right; width: 30%">
+            <img class="heart-logo" src="classpath:certificate-template/img/strip-heart.png" height="160px" />
+        </div>
+    </div>
+
+    <!--    Cert body section    -->
+    <div class="cert">
+        <div class="cert-col" style="float: left; width: 50%;">
+            <p class="margin-btm-20px margin-top-25px"><img src="classpath:certificate-template/img/tokenAppreciation.png" alt="principle name" width="230px;"/></p>
+            <p class="margin-top-15px margin-btm-5px"><span>This token was passed by </span><span class="bold">{{tokenPassedBy}}</span></p>
+            <p class="margin-btm-5px"><span>in appreciation of </span><span class="bold">{{appreciationTo}}</span></p>
+            <p class="margin-btm-5px"><span>for living one of Cisco's principles, </span><span class="bold">{{principleName}}.</span></p>
+            <br />
+            <p><span>{{tokenReceivedDate}}</span></p>
+        </div>
+        <div class="cert-col" style="float: right; width: 50%;">
+            <div class="reason">
+                <div style="height: 70%; line-height: 25px; font-size: 15px;">
+                    {{reason}}
+                </div>
+                <div style="height: 30%; line-height: 30%; vertical-align: middle;">
+                    <p style="font-family: CiscoSansTTBold; font-size: 20px; float: left; padding-top: 42px; padding-left: 20px">
+                        Thank you for Living Cisco!
+                    </p>
+                    <p style="float: right; margin-right: 5px">
+                        <img src="classpath:certificate-template/img/principles/{{principleImg}}" alt="principle name" width="90px;" style="margin-top: 0px"/>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--    Clear styles    -->
+    <div style="clear: both"></div>
+
+    <!--    Footer section    -->
+    <div class="footer">
+        <div class="footer-logo" style="float: right; padding: 15px 25px 10px 10px">
+            <img src="classpath:certificate-template/img/cisco-logo-white.png" alt="cisco logo" width="110px;">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
